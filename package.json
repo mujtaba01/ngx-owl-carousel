@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/mujtaba01/ng2-example-library"
   },
   "author": {
     "name": "Mujtaba Hussain",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/mujtaba01/ng2-example-library/issues"
   },
   "main": "./dist/index.js",
   "dependencies": {
@@ -43,6 +43,9 @@
     "@types/protractor": "^4.0.0",
     "@types/jasmine": "^2.5.40",
     "@types/selenium-webdriver": "^2.53.39"
+  },
+  "peerDependencies": {
+    "jquery": ">= 2.2.0"
   },
   "engines": {
     "node": ">=0.8.0"
