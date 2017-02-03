@@ -73,6 +73,4 @@ export class HomeComponent {
 
 ## License
 
-Copyright © 2014 Owl
-Modified work Copyright 2016 David Deutsch
-Modified work Copyright © 2017 Mujtaba Hussain
+MIT
