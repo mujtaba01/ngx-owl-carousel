@@ -20,10 +20,12 @@ export class Wrapper_OwlChild {
   context:import0.OwlChild;
   /*private*/ _changed:boolean;
   /*private*/ _expr_0:any;
+  /*private*/ _expr_1:any;
   constructor(p0:any) {
     this._changed = false;
     this.context = new import0.OwlChild(p0);
     this._expr_0 = import1.UNINITIALIZED;
+    this._expr_1 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
   }
@@ -43,6 +45,11 @@ export class Wrapper_OwlChild {
     return changed;
   }
   checkHost(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any,throwOnChange:boolean):void {
+    const currVal_1:any = this.context.owlClass;
+    if (import3.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      view.renderer.setElementClass(el,'owl-carousel',currVal_1);
+      this._expr_1 = currVal_1;
+    }
   }
   handleEvent(eventName:string,$event:any):boolean {
     var result:boolean = true;
@@ -74,6 +81,7 @@ class View_OwlChild_Host0 extends import2.AppView<any> {
   }
   detectChangesInternal(throwOnChange:boolean):void {
     this._OwlChild_0_3.ngDoCheck(this,this._el_0,throwOnChange);
+    this._OwlChild_0_3.checkHost(this,this.compView_0,this._el_0,throwOnChange);
     this.compView_0.internalDetectChanges(throwOnChange);
     if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._OwlChild_0_3.context.ngAfterViewInit(); } }
   }

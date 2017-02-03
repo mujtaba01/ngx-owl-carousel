@@ -8,14 +8,6 @@ To install this library, run:
 $ npm install ng2-owl-carousel --save
 ```
 
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install ng2-owl-carousel
-```
-
 and then from your Angular `AppModule`:
 
 ```typescript
@@ -25,7 +17,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ng2-owl-carousel';
+import { OwlModule } from 'ng2-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -33,9 +25,7 @@ import { SampleModule } from 'ng2-owl-carousel';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,30 +33,46 @@ import { SampleModule } from 'ng2-owl-carousel';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use OwlCarousel component very easily in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<!-- You can use owl-carousel selector to include its component -->
+ <owl-carousel  [options]="{items: 3, dots: false, navigation: false}"
+     <!-- If images array is dynamically changing pass this array to [items] input -->
+     [items]="images"
+     <!-- classes to be attached along with owl-carousel class -->
+     [carouselClasses]="['owl-theme', 'row', 'sliding']">
+     <div class="item" *ngFor="let image of images;let i = index">
+         <div class="thumbnail-image" [ngStyle]="{'background': 'url('abc.jpg')no-repeat scroll center center / 80px 80px'}"></div>
+     </div>
+ </owl-carousel>
 ```
 
-## Development
+To go to next slide use next() function of Component
+To go to previous slide use previous()
+To go to nth slide use to()
+```xml
+<owl-carousel #owlElement
 
-To generate all `*.js`, `*.js.map` and `*.d.ts` files:
 
-```bash
-$ npm run tsc
 ```
 
-To lint all `*.ts` files:
+```typescript
+import {OwlCarousel} from 'ng2-owl-carousel';
 
-```bash
-$ npm run lint
+export class HomeComponent {
+@ViewChild('owlElement') owlElement: OwlCarousel
+
+
+   fun() {
+     this.owlElement.next([200])
+     //duration 200ms
+   }
+}
 ```
 
 ## License
 
-MIT © [Mujtaba Hussain](mailto:md.mujtaba@hotmail.com)
+Copyright © 2014 Owl
+Modified work Copyright 2016 David Deutsch
+Modified work Copyright © 2017 Mujtaba Hussain

@@ -152,6 +152,7 @@ class View_OwlCarousel1 extends import2.AppView<any> {
     const currVal_1_1_0:any = this.parentView.context.options;
     this._OwlChild_1_4.check_options(currVal_1_1_0,throwOnChange,false);
     this._OwlChild_1_4.ngDoCheck(this,this._el_1,throwOnChange);
+    this._OwlChild_1_4.checkHost(this,this.compView_1,this._el_1,throwOnChange);
     this.compView_1.internalDetectChanges(throwOnChange);
     if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._OwlChild_1_4.context.ngAfterViewInit(); } }
   }

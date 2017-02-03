@@ -6,7 +6,7 @@ import {OwlChild} from "./owl-child.component";
   template:
   '<div *ngIf="show">' +
   '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options">' +
-  '<ng-content></ng-content></owl-carousel-child></div>'
+  '<ng-content></ng-content></owl-carousel-child></div>',
 })
 
 //sortLayoutImages
@@ -15,7 +15,7 @@ export class OwlCarousel implements DoCheck {
   @ViewChild('owl') $owlChild: OwlChild;
   @Input() carouselClasses: any = "";
   @Input() options: any = {};
-  private itemsCollection: any;
+  private items: any;
   private differ:IterableDiffer;
   show: boolean = true;
   
@@ -24,7 +24,7 @@ export class OwlCarousel implements DoCheck {
   }
 
   @Input() set owlItems(coll :any[]) {
-    this.itemsCollection = coll;
+    this.items = coll;
     if (coll && !this.differ) {
       this.differ = this.differs.find(coll).create(this.changeDetector);
     }
@@ -32,7 +32,7 @@ export class OwlCarousel implements DoCheck {
 
   ngDoCheck() {
     if(this.differ) {
-      const changes = this.differ.diff(this.itemsCollection);
+      const changes = this.differ.diff(this.items);
       if (changes) {
         var changed = false;
         changes.forEachAddedItem(() => {
@@ -55,11 +55,19 @@ export class OwlCarousel implements DoCheck {
     }, 0);
   }
 
-  next() {
-    this.$owlChild.next();
+  next(options?: any[]) {
+    this.trigger('next.owl.carousel', options);
   }
 
-  previous() {
-    this.$owlChild.previous();
+  previous(options?: any[]) {
+    this.trigger('prev.owl.carousel', options);
+  }
+
+  to(options?: any[]) {
+    this.trigger('to.owl.carousel', options);
+  }
+
+  trigger(action:string, options?: any[]) {
+    this.$owlChild.trigger(action, options);
   }
 }
