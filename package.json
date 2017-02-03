@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mujtaba01/ng2-example-library"
+    "url": "https://github.com/mujtaba01/ng2-owl-carousel"
   },
   "author": {
     "name": "Mujtaba Hussain",
     "email": "md.mujtaba@hotmail.com"
   },
   "keywords": [
-    "angular"
+    "angular", "angualr2", "owl", "carousel", "change-detection"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mujtaba01/ng2-example-library/issues"
+    "url": "https://github.com/mujtaba01/ng2-owl-carousel/issues"
   },
   "main": "./dist/index.js",
   "dependencies": {
