@@ -15,7 +15,7 @@ export class OwlCarousel implements DoCheck {
   @ViewChild('owl') $owlChild: OwlChild;
   @Input() carouselClasses: any = "";
   @Input() options: any = {};
-  private items: any;
+  private _items: any;
   private differ:IterableDiffer;
   show: boolean = true;
   
@@ -23,8 +23,8 @@ export class OwlCarousel implements DoCheck {
               private differs:IterableDiffers) {
   }
 
-  @Input() set owlItems(coll :any[]) {
-    this.items = coll;
+  @Input() set items(coll :any[]) {
+    this._items = coll;
     if (coll && !this.differ) {
       this.differ = this.differs.find(coll).create(this.changeDetector);
     }
@@ -32,7 +32,7 @@ export class OwlCarousel implements DoCheck {
 
   ngDoCheck() {
     if(this.differ) {
-      const changes = this.differ.diff(this.items);
+      const changes = this.differ.diff(this._items);
       if (changes) {
         var changed = false;
         changes.forEachAddedItem(() => {

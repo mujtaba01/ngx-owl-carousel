@@ -61,7 +61,7 @@ export class Wrapper_OwlCarousel {
   check_owlItems(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
     if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_2,currValue))) {
       this._changed = true;
-      this.context.owlItems = currValue;
+      this.context.items = currValue;
       this._expr_2 = currValue;
     }
   }
