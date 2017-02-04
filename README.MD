@@ -1,5 +1,28 @@
 # ng2-owl-carousel
 
+## Dependencies
+
+This Library requires jquery to be installed globally installed
+
+For commonJs based application load jquery using script loader or use link tag in html file
+
+Install script-loader if you don't have already
+```bash
+npm install script-loader
+```
+
+and in vendor.ts
+```js
+require('script!jquery');
+```
+
+OR
+
+```html
+<script type="application/javascript" src="path-to-jquery.js"></script>
+```
+
+
 ## Installation
 
 To install this library, run:
@@ -32,7 +55,6 @@ import { OwlModule } from 'ng2-owl-carousel';
 })
 export class AppModule { }
 ```
-
 Once your library is imported, you can use OwlCarousel component very easily in your Angular application:
 
 ```xml
@@ -73,4 +95,4 @@ export class HomeComponent {
 
 ## License
 
-MIT
+This project is licensed under the terms of the MIT license.
