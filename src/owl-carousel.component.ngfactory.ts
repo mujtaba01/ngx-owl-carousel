@@ -119,55 +119,49 @@ export const OwlCarouselNgFactory:import8.ComponentFactory<import0.OwlCarousel> 
 const styles_OwlCarousel:any[] = ([] as any[]);
 class View_OwlCarousel1 extends import2.AppView<any> {
   _el_0:any;
-  _el_1:any;
-  compView_1:import2.AppView<import10.OwlChild>;
-  _NgClass_1_3:import11.Wrapper_NgClass;
-  _OwlChild_1_4:import12.Wrapper_OwlChild;
+  compView_0:import2.AppView<import10.OwlChild>;
+  _NgClass_0_3:import11.Wrapper_NgClass;
+  _OwlChild_0_4:import12.Wrapper_OwlChild;
   constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import13.ViewContainer) {
     super(View_OwlCarousel1,renderType_OwlCarousel,import6.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
   }
   createInternal(rootSelector:string):import8.ComponentRef<any> {
-    this._el_0 = import3.createRenderElement(this.renderer,(null as any),'div',import3.EMPTY_INLINE_ARRAY,(null as any));
-    this._el_1 = import3.createRenderElement(this.renderer,this._el_0,'owl-carousel-child',import3.EMPTY_INLINE_ARRAY,(null as any));
-    this.compView_1 = new import12.View_OwlChild0(this.viewUtils,this,1,this._el_1);
-    this._NgClass_1_3 = new import11.Wrapper_NgClass(this.parentView.injectorGet(import9.IterableDiffers,this.parentIndex),this.parentView.injectorGet(import14.KeyValueDiffers,this.parentIndex),new import15.ElementRef(this._el_1),this.renderer);
-    this._OwlChild_1_4 = new import12.Wrapper_OwlChild(new import15.ElementRef(this._el_1));
-    this.compView_1.create(this._OwlChild_1_4.context);
-    this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [
-      this._el_0,
-      this._el_1
-    ]
-    ),(null as any));
+    this._el_0 = import3.createRenderElement(this.renderer,(null as any),'owl-carousel-child',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this.compView_0 = new import12.View_OwlChild0(this.viewUtils,this,0,this._el_0);
+    this._NgClass_0_3 = new import11.Wrapper_NgClass(this.parentView.injectorGet(import9.IterableDiffers,this.parentIndex),this.parentView.injectorGet(import14.KeyValueDiffers,this.parentIndex),new import15.ElementRef(this._el_0),this.renderer);
+    this._OwlChild_0_4 = new import12.Wrapper_OwlChild(new import15.ElementRef(this._el_0));
+    this.compView_0.create(this._OwlChild_0_4.context);
+    this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import16.NgClass) && (1 === requestNodeIndex))) { return this._NgClass_1_3.context; }
-    if (((token === import10.OwlChild) && (1 === requestNodeIndex))) { return this._OwlChild_1_4.context; }
+    if (((token === import16.NgClass) && (0 === requestNodeIndex))) { return this._NgClass_0_3.context; }
+    if (((token === import10.OwlChild) && (0 === requestNodeIndex))) { return this._OwlChild_0_4.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1_0_0:any = this.parentView.context.carouselClasses;
-    this._NgClass_1_3.check_ngClass(currVal_1_0_0,throwOnChange,false);
-    this._NgClass_1_3.ngDoCheck(this,this._el_1,throwOnChange);
-    const currVal_1_1_0:any = this.parentView.context.options;
-    this._OwlChild_1_4.check_options(currVal_1_1_0,throwOnChange,false);
-    this._OwlChild_1_4.ngDoCheck(this,this._el_1,throwOnChange);
-    this._OwlChild_1_4.checkHost(this,this.compView_1,this._el_1,throwOnChange);
-    this.compView_1.internalDetectChanges(throwOnChange);
-    if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._OwlChild_1_4.context.ngAfterViewInit(); } }
+    const currVal_0_0_0:any = this.parentView.context.carouselClasses;
+    this._NgClass_0_3.check_ngClass(currVal_0_0_0,throwOnChange,false);
+    this._NgClass_0_3.ngDoCheck(this,this._el_0,throwOnChange);
+    const currVal_0_1_0:any = this.parentView.context.options;
+    this._OwlChild_0_4.check_options(currVal_0_1_0,throwOnChange,false);
+    this._OwlChild_0_4.ngDoCheck(this,this._el_0,throwOnChange);
+    this._OwlChild_0_4.checkHost(this,this.compView_0,this._el_0,throwOnChange);
+    this.compView_0.internalDetectChanges(throwOnChange);
+    if (!throwOnChange) { if ((this.numberOfChecks === 0)) { this._OwlChild_0_4.context.ngAfterViewInit(); } }
   }
   dirtyParentQueriesInternal():void {
     (<View_OwlCarousel0>this.parentView)._viewQuery_owl_0.setDirty();
   }
   destroyInternal():void {
-    this.compView_1.destroy();
-    this._OwlChild_1_4.ngOnDestroy();
+    this.compView_0.destroy();
+    this._OwlChild_0_4.ngOnDestroy();
   }
   visitRootNodesInternal(cb:any,ctx:any):void {
     cb(this._el_0,ctx);
   }
   visitProjectableNodesInternal(nodeIndex:number,ngContentIndex:number,cb:any,ctx:any):void {
-    if (((nodeIndex == 1) && (ngContentIndex == 0))) { this.visitProjectedNodes(0,cb,ctx); }
+    if (((nodeIndex == 0) && (ngContentIndex == 0))) { this.visitProjectedNodes(0,cb,ctx); }
   }
 }
 var renderType_OwlCarousel:import4.RenderComponentType = import3.createRenderComponentType('',1,import5.ViewEncapsulation.None,styles_OwlCarousel,{});
@@ -202,7 +196,7 @@ export class View_OwlCarousel0 extends import2.AppView<import0.OwlCarousel> {
     this._vc_0.detectChangesInNestedViews(throwOnChange);
     if (!throwOnChange) { if (this._viewQuery_owl_0.dirty) {
         this._viewQuery_owl_0.reset([this._vc_0.mapNestedViews(View_OwlCarousel1,(nestedView:View_OwlCarousel1):any => {
-          return [nestedView._OwlChild_1_4.context];
+          return [nestedView._OwlChild_0_4.context];
       })]);
       this.context.$owlChild = this._viewQuery_owl_0.first;
     } }

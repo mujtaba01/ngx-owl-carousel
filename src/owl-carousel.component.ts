@@ -4,9 +4,8 @@ import {OwlChild} from "./owl-child.component";
 @Component({
   selector: 'owl-carousel',
   template:
-  '<div *ngIf="show">' +
-  '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options">' +
-  '<ng-content></ng-content></owl-carousel-child></div>',
+  '<owl-carousel-child *ngIf="show" #owl [ngClass]="carouselClasses" [options]="options">' +
+  '<ng-content></ng-content></owl-carousel-child>',
 })
 
 //sortLayoutImages
