@@ -1,11 +1,17 @@
 # Node
-node_modules/*
+node_modules
 npm-debug.log
 
 # TypeScript
 *.js
 *.map
 *.d.ts
+*.metadata.json
+
+*.ngfactory.ts
+*.ngsummary.json
+
+dist
 
 # JetBrains
 .idea
