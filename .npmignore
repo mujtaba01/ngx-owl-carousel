@@ -11,8 +11,6 @@ npm-debug.log
 
 *.ngsummary.json
 
-/src
-
 .travis.yml
 
 tsconfig.json

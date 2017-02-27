@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "./dist",
+    "outDir": ".",
     "typeRoots": [
       "node_modules/@types"
     ]

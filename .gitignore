@@ -11,8 +11,6 @@ npm-debug.log
 *.ngfactory.ts
 *.ngsummary.json
 
-dist
-
 # JetBrains
 .idea
 .project
