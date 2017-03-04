@@ -82,22 +82,25 @@ Once your library is imported, you can use OwlCarousel component very easily in 
 ```
 ## APIs
 1. next(options?: any[])
-To go to next slide. Animation time can be passed as options array.
-E.g. this.owlElement.next([200]). (200ms animation time).
+  
+  To go to next slide. Animation time can be passed as options array.
+  E.g. this.owlElement.next([200]). (200ms animation time).
 
 2. previous(options?: any[])
-To go to previous slide. (arguments are similar)
+  
+  To go to previous slide. (arguments are similar)
 
 3. to(options?: any[])
-To go to nth slide. (arguments are similar)
+  
+  To go to nth slide. (arguments are similar)
 
 4. trigger(action: string, options?: any[])
-To trigger any jquery owl carousel's action. options can be passed accordingly.
+  
+  To trigger any jquery owl carousel's action. options can be passed accordingly.
 
 5. refresh()
 After doing some changes in owl component's options this function can be used to refresh owl component
 
-Api docs https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html
 ```html
 <owl-carousel #owlElement
 
