@@ -34,12 +34,12 @@ export class OwlCarousel implements DoCheck {
       const changes = this.differ.diff(this._items);
       if (changes) {
         var changed = false;
-        changes.forEachAddedItem(() => {
+        let changedFn = () =>{
           changed = true;
-        });
-        changes.forEachRemovedItem(() => {
-          changed = true;
-        });
+        };
+        changes.forEachAddedItem(changedFn);
+        changes.forEachMovedItem(changedFn);
+        changes.forEachRemovedItem(changedFn);
         if (changed) {
           this.refresh();
         }
