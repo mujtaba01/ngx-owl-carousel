@@ -99,7 +99,8 @@ Once your library is imported, you can use OwlCarousel component very easily in 
   To trigger any jquery owl carousel's action. options can be passed accordingly.
 
 5. refresh()
-After doing some changes in owl component's options this function can be used to refresh owl component
+  
+  After doing some changes in owl component's options this function can be used to refresh owl component
 
 ```html
 <owl-carousel #owlElement
