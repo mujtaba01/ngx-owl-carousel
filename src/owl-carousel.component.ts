@@ -18,14 +18,13 @@ export class OwlCarousel implements DoCheck {
   private differ:IterableDiffer;
   show: boolean = true;
   
-  constructor(private changeDetector:ChangeDetectorRef,
-              private differs:IterableDiffers) {
+  constructor(private differs:IterableDiffers) {
   }
 
   @Input() set items(coll :any[]) {
     this._items = coll;
     if (coll && !this.differ) {
-      this.differ = this.differs.find(coll).create(this.changeDetector);
+      this.differ = this.differs.find(coll).create(null);
     }
   }
 
