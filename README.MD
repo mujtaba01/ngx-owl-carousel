@@ -1,4 +1,4 @@
-# ng2-owl-carousel
+# angular-owl-carousel
 
 ## Dependencies
 
@@ -38,7 +38,7 @@ Add this to angular cli-json file
 To install this library, run:
 
 ```bash
-$ npm install ng2-owl-carousel --save
+$ npm install angular-owl-carousel --save
 ```
 
 and then from your Angular `AppModule`:
@@ -50,7 +50,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { OwlModule } from 'ng2-owl-carousel';
+import { OwlModule } from 'angular-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -109,7 +109,7 @@ Once your library is imported, you can use OwlCarousel component very easily in 
 ```
 
 ```typescript
-import {OwlCarousel} from 'ng2-owl-carousel';
+import {OwlCarousel} from 'angular-owl-carousel';
 
 export class HomeComponent {
 @ViewChild('owlElement') owlElement: OwlCarousel

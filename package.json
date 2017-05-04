@@ -1,7 +1,7 @@
 {
-  "name": "ng2-owl-carousel",
-  "description": "An angular 2 wrapper for jquery owl carousel library with dynamic carousel item change detection",
-  "version": "0.1.15-beta.1",
+  "name": "angular-owl-carousel",
+  "description": "An angular (2 or 4) wrapper for jquery owl carousel library with dynamic carousel item change detection",
+  "version": "1.0.0",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint src/**/*.ts",
@@ -18,7 +18,7 @@
     "email": "md.mujtaba@hotmail.com"
   },
   "keywords": [
-    "angular2",
+    "angular",
     "angular 2",
     "angular 2 owl carousel",
     "dynamic",
