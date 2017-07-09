@@ -1,4 +1,4 @@
-# angular-owl-carousel
+# ngx-owl-carousel
 
 ## Dependencies
 
@@ -18,17 +18,18 @@ require('script!jquery');
 
 OR
 
+inside index.html put this inside the head tag
 ```html
 <script type="application/javascript" src="path-to-jquery.js"></script>
 ```
 
 If using angular-cli
 
-Add this to angular cli-json file
+Add this to angular-cli.json file
 
 ```json
 "scripts": [
-"../node_modules/jquery/dist/jquery.js"
+    "../node_modules/jquery/dist/jquery.js"
 ]
 ```
 
@@ -38,7 +39,7 @@ Add this to angular cli-json file
 To install this library, run:
 
 ```bash
-$ npm install angular-owl-carousel --save
+$ npm install ngx-owl-carousel --save
 ```
 
 and then from your Angular `AppModule`:
@@ -50,7 +51,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { OwlModule } from 'angular-owl-carousel';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,39 @@ import { OwlModule } from 'angular-owl-carousel';
 })
 export class AppModule { }
 ```
+
+## Import required css files
+
+Include these two css files
+
+1. owl.carousel.css file
+This is required css files.
+
+2. owl.theme.default file
+This file is optional. However to use default navigation controls or dots buttons this file is necessary.
+
+Inside angular-cli.json add these lines:
+
+```json
+"styles": [
+    "../node_modules/owl.carousel/dist/owl.carousel.css",
+    "../node_modules/owl.carousel/dist/owl.theme.default.css"
+]
+```
+
+OR include these files in main scss file.
+```scss
+import "~owl.carousel/dist/owl.carousel.css";
+import "~owl.carousel/dist/owl.theme.default.css";
+```
+
+OR include these files in index.html file inside head tag.
+
+```html
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+```
+
 Once your library is imported, you can use OwlCarousel component very easily in your Angular application:
 
 ```xml
@@ -80,6 +114,9 @@ Once your library is imported, you can use OwlCarousel component very easily in 
      </div>
  </owl-carousel>
 ```
+
+Note: Please remove comments from the above example else you will get get errors.
+
 ## APIs
 1. next(options?: any[])
   
@@ -105,11 +142,10 @@ Once your library is imported, you can use OwlCarousel component very easily in 
 ```html
 <owl-carousel #owlElement
 
-
 ```
 
 ```typescript
-import {OwlCarousel} from 'angular-owl-carousel';
+import {OwlCarousel} from 'ngx-owl-carousel';
 
 export class HomeComponent {
 @ViewChild('owlElement') owlElement: OwlCarousel

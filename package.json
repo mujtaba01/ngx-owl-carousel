@@ -1,5 +1,5 @@
 {
-  "name": "angular-owl-carousel",
+  "name": "ngx-owl-carousel",
   "description": "An angular (2 or 4) wrapper for jquery owl carousel library with dynamic carousel item change detection",
   "version": "1.0.0",
   "scripts": {
@@ -20,6 +20,7 @@
   "keywords": [
     "angular",
     "angular 2",
+    "angular 4",
     "angular 2 owl carousel",
     "dynamic",
     "responsive"
