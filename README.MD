@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-This Library requires jquery to be installed globally
+This Library requires jquery and owl.carousel to be installed globally
 
-For commonJs based application load jquery using script loader or use link tag in html file
+For commonJs based application load jquery and owl.carousel using script loader or use link tag in html file
 
 Install script-loader if you don't have already
 ```bash
@@ -14,6 +14,7 @@ npm install script-loader
 and in vendor.ts
 ```js
 require('script!jquery');
+require('script!owl.carousel');
 ```
 
 OR
@@ -21,6 +22,7 @@ OR
 inside index.html put this inside the head tag
 ```html
 <script type="application/javascript" src="path-to-jquery.js"></script>
+<script type="application/javascript" src="/owl.carousel/dist/owl.carousel.js"></script>
 ```
 
 If using angular-cli
@@ -29,7 +31,8 @@ Add this to angular-cli.json file
 
 ```json
 "scripts": [
-    "../node_modules/jquery/dist/jquery.js"
+    "../node_modules/jquery/dist/jquery.js",
+    "../node_modules/owl.carousel/dist/owl.carousel.js"
 ]
 ```
 

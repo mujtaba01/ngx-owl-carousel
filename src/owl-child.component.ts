@@ -14,7 +14,9 @@ export class OwlChild  implements OnDestroy {
     }
 
     ngAfterViewInit() {
-        this.$owl = $(this.el.nativeElement).owlCarousel(this.options);
+        if($) {
+            this.$owl = $(this.el.nativeElement).owlCarousel(this.options);
+        }
     }
 
     trigger(action: string, options?: any[]) {
