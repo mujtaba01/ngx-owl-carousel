@@ -84,22 +84,22 @@ Inside angular-cli.json add these lines:
 
 ```json
 "styles": [
-    "../node_modules/owl.carousel/dist/owl.carousel.css",
-    "../node_modules/owl.carousel/dist/owl.theme.default.css"
+    "../node_modules/owl.carousel/dist/assets/owl.carousel.css",
+    "../node_modules/owl.carousel/dist/assets/owl.theme.default.css"
 ]
 ```
 
 OR include these files in main scss file.
 ```scss
-import "~owl.carousel/dist/owl.carousel.css";
-import "~owl.carousel/dist/owl.theme.default.css";
+import "~owl.carousel/dist/assets/owl.carousel.css";
+import "~owl.carousel/dist/assets/owl.theme.default.css";
 ```
 
 OR include these files in index.html file inside head tag.
 
 ```html
-    <link rel="stylesheet" href="/node_modules/owl.carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="/node_modules/owl.carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
 ```
 
 Once your library is imported, you can use OwlCarousel component very easily in your Angular application:
@@ -118,7 +118,7 @@ Once your library is imported, you can use OwlCarousel component very easily in 
  </owl-carousel>
 ```
 
-Note: Please remove comments from the above example else you will get get errors.
+Note: Please remove comments from the above example else you will get errors.
 
 ##Angular  Universal Integration
 
