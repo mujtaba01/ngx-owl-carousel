@@ -21,8 +21,8 @@ OR
 
 inside index.html put this inside the head tag
 ```html
-<script type="application/javascript" src="path-to-jquery.js"></script>
-<script type="application/javascript" src="/owl.carousel/dist/owl.carousel.js"></script>
+<script type="application/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+<script type="application/javascript" src="/node_modules/owl.carousel/dist/owl.carousel.js"></script>
 ```
 
 If using angular-cli
@@ -120,22 +120,31 @@ Once your library is imported, you can use OwlCarousel component very easily in 
 
 Note: Please remove comments from the above example else you will get get errors.
 
+##Angular  Universal Integration
+
+This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in angular universal currently. Therefore the carousel cannot be rendered server side.
+
+However if you are using angular universal you will need to do these two things.
+
+1. Do not include owl.carousel ("/node_modules/owl.carousel/dist/owl.carousel.js") in server side configuration.
+
+2. Initialize a variable e.g. isServer in your component and use *ngIf="isServer" with owl-carousel tag. 
+
 ## APIs
-1. next(options?: any[])
-  - To go to next slide. Animation time can be passed as options array.
-  E.g. this.owlElement.next([200]). (200ms animation time).
-
+1. next(options?: any[]) 
+    - To go to next slide. Animation time can be passed as options array. 
+    E.g. this.owlElement.next([200]). (200ms animation time).
 2. previous(options?: any[])
-  - To go to previous slide. (arguments are similar)
-
+    - To go to previous slide. (arguments are similar)
+    
 3. to(options?: any[])
-  - To go to nth slide. (arguments are similar)
+    - To go to nth slide. (arguments are similar)
 
 4. trigger(action: string, options?: any[])
-  - To trigger any jquery owl carousel's action. options can be passed accordingly.
+    - To trigger any jquery owl carousel's action. options can be passed accordingly.
 
 5. refresh()
-  - After doing some changes in owl component's options this function can be used to refresh owl component
+    - After doing some changes in owl component's options this function can be used to refresh owl component
 
 ```html
 <owl-carousel #owlElement

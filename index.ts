@@ -12,7 +12,7 @@ export * from './src/owl-carousel.component';
     OwlCarousel, OwlChild
   ],
   exports: [
-    OwlCarousel,
+    OwlCarousel
   ]
 })
 export class OwlModule {
