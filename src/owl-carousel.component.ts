@@ -1,10 +1,10 @@
-import {Component, ViewChild, Input, IterableDiffers, ChangeDetectorRef, IterableDiffer, DoCheck} from '@angular/core';
+import {Component, ViewChild, Input, IterableDiffers, IterableDiffer, DoCheck} from '@angular/core';
 import {OwlChild} from "./owl-child.component";
 
 @Component({
   selector: 'owl-carousel',
   template:
-  '<owl-carousel-child *ngIf="show" #owl [ngClass]="carouselClasses" [options]="options">' +
+  '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options">' +
   '<ng-content></ng-content></owl-carousel-child>',
 })
 
@@ -16,7 +16,6 @@ export class OwlCarousel implements DoCheck {
   @Input() options: any = {};
   private _items: any;
   private differ:IterableDiffer;
-  show: boolean = true;
   
   constructor(private differs:IterableDiffers) {
   }
@@ -40,17 +39,23 @@ export class OwlCarousel implements DoCheck {
         changes.forEachMovedItem(changedFn);
         changes.forEachRemovedItem(changedFn);
         if (changed) {
-          this.refresh();
+          this.reInit();
         }
       }
     }
   }
+
+  reInit() {
+      setTimeout(()=>{
+          if(this.$owlChild) {
+              this.$owlChild.destroyOwl();
+              this.$owlChild.initOwl();
+          }
+      },0);
+  }
   
   refresh() {
-    this.show = false;
-    setTimeout(()=>{
-      this.show = true;
-    }, 0);
+    this.trigger('refresh.owl.carousel');
   }
 
   next(options?: any[]) {
