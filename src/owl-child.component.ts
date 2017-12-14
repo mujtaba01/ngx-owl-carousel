@@ -1,5 +1,7 @@
-import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit} from "@angular/core";
-declare var $: any,jQuery: any;
+import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit} from '@angular/core';
+
+declare var $: any;
+
 @Component({
     selector: 'owl-carousel-child',
     template: '<ng-content></ng-content>'
@@ -10,11 +12,10 @@ export class OwlChild  implements OnInit, OnDestroy {
     @Input() options: any = {};
 
     constructor(private el: ElementRef) {
-        $ = $ || jQuery;
     }
 
     ngOnInit() {
-        if((typeof window != 'undefined') && $ && typeof $.fn.owlCarousel == 'function') {
+        if ((typeof window !== 'undefined') && $ && typeof $.fn.owlCarousel === 'function') {
             this.$owl = $(this.el.nativeElement);
         }
     }
@@ -24,13 +25,13 @@ export class OwlChild  implements OnInit, OnDestroy {
     }
 
     initOwl() {
-        if(this.$owl) {
+        if (this.$owl) {
             this.$owl.owlCarousel(this.options);
         }
     }
 
     trigger(action: string, options?: any[]) {
-        if(this.$owl) {
+        if (this.$owl) {
             this.$owl.trigger(action, options);
         }
     }
@@ -41,7 +42,7 @@ export class OwlChild  implements OnInit, OnDestroy {
     }
 
     destroyOwl() {
-        if(this.$owl) {
+        if ( this.$owl) {
             this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded');
         }
     }

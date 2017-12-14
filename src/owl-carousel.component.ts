@@ -1,5 +1,5 @@
 import {Component, ViewChild, Input, IterableDiffers, IterableDiffer, DoCheck} from '@angular/core';
-import {OwlChild} from "./owl-child.component";
+import {OwlChild} from './owl-child.component';
 
 @Component({
   selector: 'owl-carousel',
@@ -8,19 +8,17 @@ import {OwlChild} from "./owl-child.component";
   '<ng-content></ng-content></owl-carousel-child>',
 })
 
-//sortLayoutImages
-
 export class OwlCarousel implements DoCheck {
   @ViewChild('owl') $owlChild: OwlChild;
-  @Input() carouselClasses: any = "";
+  @Input() carouselClasses: any = '';
   @Input() options: any = {};
   private _items: any;
-  private differ:IterableDiffer;
-  
-  constructor(private differs:IterableDiffers) {
+  private differ: IterableDiffer;
+
+  constructor(private differs: IterableDiffers) {
   }
 
-  @Input() set items(coll :any[]) {
+  @Input() set items(coll: any[]) {
     this._items = coll;
     if (coll && !this.differ) {
       this.differ = this.differs.find(coll).create(null);
@@ -28,11 +26,11 @@ export class OwlCarousel implements DoCheck {
   }
 
   ngDoCheck() {
-    if(this.differ) {
+    if (this.differ) {
       const changes = this.differ.diff(this._items);
       if (changes) {
-        var changed = false;
-        let changedFn = () =>{
+        let changed = false;
+        let changedFn = () => {
           changed = true;
         };
         changes.forEachAddedItem(changedFn);
@@ -46,14 +44,14 @@ export class OwlCarousel implements DoCheck {
   }
 
   reInit() {
-      setTimeout(()=>{
-          if(this.$owlChild) {
+      setTimeout(() => {
+          if (this.$owlChild) {
               this.$owlChild.destroyOwl();
               this.$owlChild.initOwl();
           }
-      },0);
+      }, 0);
   }
-  
+
   refresh() {
     this.trigger('refresh.owl.carousel');
   }
@@ -70,7 +68,7 @@ export class OwlCarousel implements DoCheck {
     this.trigger('to.owl.carousel', options);
   }
 
-  trigger(action:string, options?: any[]) {
+  trigger(action: string, options?: any[]) {
     this.$owlChild.trigger(action, options);
   }
 }
