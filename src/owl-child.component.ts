@@ -1,6 +1,6 @@
 import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit} from '@angular/core';
 
-declare var $: any;
+declare var $: any, jQuery: any;
 
 @Component({
     selector: 'owl-carousel-child',
@@ -12,6 +12,9 @@ export class OwlChild  implements OnInit, OnDestroy {
     @Input() options: any = {};
 
     constructor(private el: ElementRef) {
+        if (typeof $ === 'undefined' && typeof jQuery !== 'undefined') {
+            $ = jQuery;
+        }
     }
 
     ngOnInit() {
@@ -43,7 +46,7 @@ export class OwlChild  implements OnInit, OnDestroy {
 
     destroyOwl() {
         if ( this.$owl) {
-            this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded');
+            this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded').find('.owl-item:empty').remove();
         }
     }
 }

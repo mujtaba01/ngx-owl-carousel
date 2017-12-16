@@ -1,7 +1,7 @@
 {
   "name": "ngx-owl-carousel",
   "description": "An angular (2 or 4) wrapper for jquery owl carousel library with dynamic carousel item change detection",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint src/**/*.ts",
