@@ -1,7 +1,6 @@
 import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit} from '@angular/core';
 
 declare var $: any, jQuery: any;
-
 @Component({
     selector: 'owl-carousel-child',
     template: '<ng-content></ng-content>'
