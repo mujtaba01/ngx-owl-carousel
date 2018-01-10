@@ -9,7 +9,7 @@ export class OwlChild  implements OnInit, OnDestroy {
     @HostBinding('class.owl-carousel') owlClass = true;
     $owl: any;
     @Input() options: any = {};
-
+    currentSlideIndex: number;
     constructor(private el: ElementRef) {
         if (typeof $ === 'undefined' && typeof jQuery !== 'undefined') {
             $ = jQuery;
@@ -28,7 +28,15 @@ export class OwlChild  implements OnInit, OnDestroy {
 
     initOwl() {
         if (this.$owl) {
-            this.$owl.owlCarousel(this.options);
+            let options: any = {};
+            Object.assign(options, this.options);
+            if (this.currentSlideIndex) {
+                options.startPosition = this.currentSlideIndex;
+            }
+            this.$owl.owlCarousel(options);
+            this.$owl.on('changed.owl.carousel', (event: any) => {
+                this.currentSlideIndex = event.item.index;
+            });
         }
     }
 

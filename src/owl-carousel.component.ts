@@ -4,7 +4,7 @@ import {OwlChild} from './owl-child.component';
 @Component({
   selector: 'owl-carousel',
   template:
-  '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options">' +
+  '<owl-carousel-child #owl [ngClass]="carouselClasses" [options]="options" >' +
   '<ng-content></ng-content></owl-carousel-child>',
 })
 
@@ -12,7 +12,7 @@ export class OwlCarousel implements DoCheck {
   @ViewChild('owl') $owlChild: OwlChild;
   @Input() carouselClasses: any = '';
   @Input() options: any = {};
-  private _items: any;
+  private _items: any[];
   private differ: IterableDiffer;
 
   constructor(private differs: IterableDiffers) {
@@ -44,11 +44,19 @@ export class OwlCarousel implements DoCheck {
   }
 
   reInit() {
+      if (this.$owlChild.$owl) {
+          this.$owlChild.$owl.css('display', 'none');
+      }
       setTimeout(() => {
-          if (this.$owlChild) {
-              this.$owlChild.destroyOwl();
-              this.$owlChild.initOwl();
+          this.$owlChild.destroyOwl();
+          if (this.$owlChild.$owl) {
+              let itemLength = this._items && this._items.length;
+              if (itemLength && itemLength <= this.$owlChild.currentSlideIndex) {
+                  this.$owlChild.currentSlideIndex = itemLength;
+              }
+              this.$owlChild.$owl.css('display', 'block');
           }
+          this.$owlChild.initOwl();
       }, 0);
   }
 
