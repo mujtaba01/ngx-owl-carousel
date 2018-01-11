@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mujtaba01/ng2-owl-carousel"
+    "url": "https://github.com/mujtaba01/ngx-owl-carousel"
   },
   "author": {
     "name": "Mujtaba Hussain",
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mujtaba01/ng2-owl-carousel/issues"
+    "url": "https://github.com/mujtaba01/ngx-owl-carousel/issues"
   },
   "main": "./index.js",
   "dependencies": {

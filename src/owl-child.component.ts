@@ -1,4 +1,4 @@
-import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit} from '@angular/core';
+import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit, Output, EventEmitter} from '@angular/core';
 
 declare var $: any, jQuery: any;
 @Component({
