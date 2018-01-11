@@ -120,15 +120,9 @@ Once your library is imported, you can use OwlCarousel component very easily in 
 
 Note: Please remove comments from the above example else you will get errors.
 
-##Angular  Universal Integration
+## Angular  Universal Integration
 
-This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in angular universal currently. Therefore the carousel cannot be rendered server side.
-
-However if you are using angular universal you will need to do these two things.
-
-1. Do not include owl.carousel ("/node_modules/owl.carousel/dist/owl.carousel.js") in server side configuration.
-
-2. Initialize a variable e.g. isServer in your component and use *ngIf="isServer" with owl-carousel tag. 
+This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in Angular Universal currently. Therefore the carousel cannot be rendered server side. However if you are using angular universal, do not include owl.carousel ("/node_modules/owl.carousel/dist/owl.carousel.js") in server side configuration.
 
 ## APIs
 1. next(options?: any[]) 
@@ -142,9 +136,6 @@ However if you are using angular universal you will need to do these two things.
 
 4. trigger(action: string, options?: any[])
     - To trigger any jquery owl carousel's action. options can be passed accordingly.
-
-5. refresh()
-    - After doing some changes in owl component's options this function can be used to refresh owl component
 
 ```html
 <owl-carousel #owlElement
@@ -167,7 +158,7 @@ export class HomeComponent {
 
 ### Callbacks
 
-All callbacks listed for native owl carousel's documentation https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html can be used in in options properties.
+All callbacks listed in native owl carousel's documentation https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html can be used in options properties.
 
 Callbacks list:
 * onInitialize
