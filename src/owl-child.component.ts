@@ -34,6 +34,7 @@ export class OwlChild  implements OnInit, OnDestroy {
                 options.startPosition = this.currentSlideIndex;
             }
             this.$owl.owlCarousel(options);
+            this.$owl.removeClass('owl-hidden');
             this.$owl.on('changed.owl.carousel', (event: any) => {
                 this.currentSlideIndex = event.item.index;
             });
