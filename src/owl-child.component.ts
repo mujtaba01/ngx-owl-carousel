@@ -53,7 +53,7 @@ export class OwlChild  implements OnInit, OnDestroy {
 
     destroyOwl() {
         if ( this.$owl) {
-            this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded').find('.owl-item:empty').remove();
+            this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded').find('.owl-stage:empty, .owl-item:empty').remove();
         }
     }
 }
