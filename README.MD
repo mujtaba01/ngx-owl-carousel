@@ -113,7 +113,7 @@ Once your library is imported, you can use OwlCarousel component very easily in 
      <!-- classes to be attached along with owl-carousel class -->
      [carouselClasses]="['owl-theme', 'row', 'sliding']">
      <div class="item" *ngFor="let image of images;let i = index">
-         <div class="thumbnail-image" [ngStyle]="{'background': 'url('abc.jpg')no-repeat scroll center center / 80px 80px'}"></div>
+         <div class="thumbnail-image" [ngStyle]="{'background': 'url(abc.jpg) no-repeat scroll center center / 80px 80px'}"></div>
      </div>
  </owl-carousel>
 ```
